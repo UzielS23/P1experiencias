@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Experiencias</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Experiencias</h1>
+        <a href="{{ url_for('add_experiencia') }}">Añadir Nueva Experiencia</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre y Apellido</th>
+                    <th>Comentario</th>
+                    <th>Calificación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for experiencia in experiencias %}
+                <tr>
+                    <td>{{ experiencia.Id_Experiencia }}</td>
+                    <td>{{ experiencia.Nombre_Apellido }}</td>
+                    <td>{{ experiencia.Comentario }}</td>
+                    <td>{{ experiencia.Calificacion }}</td>
+                    <td>
+                        <a href="{{ url_for('update_experiencia', id=experiencia.Id_Experiencia) }}">Editar</a>
+                        <form action="{{ url_for('delete_experiencia', id=experiencia.Id_Experiencia) }}" method="POST" style="display:inline;">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
