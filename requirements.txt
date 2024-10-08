@@ -156,8 +156,6 @@ python-resize-image==1.1.20
 python-socketio==5.11.1
 pyttsx3==2.90
 pytz==2024.1
-pywin32==306
-pywin32-ctypes==0.2.2
 PyYAML==6.0.1
 regex==2024.4.16
 requests==2.31.0
