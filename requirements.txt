@@ -1,3 +1,3 @@
-Flask==2.0.3                       # Framework web
-mysql-connector-python==8.0.27     # Conexión a MySQL
-# Agrega aquí cualquier otra dependencia que estés utilizando en tu proyecto
+Flask==2.0.3
+mysql-connector-python==8.0.27
+gunicorn==20.1.0  # Asegúrate de incluir Gunicorn
